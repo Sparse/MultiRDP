@@ -1,0 +1,28 @@
+C:\Users\i703682\documents\visual studio 2012\Projects\MultiRDP\MultiRDP\bin\Release\MultiRDP.exe.config
+C:\Users\i703682\documents\visual studio 2012\Projects\MultiRDP\MultiRDP\bin\Release\MultiRDP.exe
+C:\Users\i703682\documents\visual studio 2012\Projects\MultiRDP\MultiRDP\bin\Release\MultiRDP.pdb
+C:\Users\i703682\documents\visual studio 2012\Projects\MultiRDP\MultiRDP\obj\Release\MultiRDP.csprojResolveAssemblyReference.cache
+C:\Users\i703682\documents\visual studio 2012\Projects\MultiRDP\MultiRDP\obj\Release\MultiRDP.Form1.resources
+C:\Users\i703682\documents\visual studio 2012\Projects\MultiRDP\MultiRDP\obj\Release\MultiRDP.Properties.Resources.resources
+C:\Users\i703682\documents\visual studio 2012\Projects\MultiRDP\MultiRDP\obj\Release\MultiRDP.csproj.GenerateResource.Cache
+C:\Users\i703682\documents\visual studio 2012\Projects\MultiRDP\MultiRDP\obj\Release\MultiRDP.exe
+C:\Users\i703682\documents\visual studio 2012\Projects\MultiRDP\MultiRDP\obj\Release\MultiRDP.pdb
+E:\My Programming Projects\C#\Project types\IT Projects\MultiRDP\MultiRDP\bin\Release\MultiRDP.exe.config
+E:\My Programming Projects\C#\Project types\IT Projects\MultiRDP\MultiRDP\obj\Release\MultiRDP.exe
+E:\My Programming Projects\C#\Project types\IT Projects\MultiRDP\MultiRDP\obj\Release\MultiRDP.pdb
+E:\My Programming Projects\C#\Project types\IT Projects\MultiRDP\MultiRDP\bin\Release\MultiRDP.exe
+E:\My Programming Projects\C#\Project types\IT Projects\MultiRDP\MultiRDP\bin\Release\MultiRDP.pdb
+E:\My Programming Projects\C#\Project types\IT Projects\MultiRDP\MultiRDP\obj\Release\MultiRDP.csprojResolveAssemblyReference.cache
+E:\My Programming Projects\C#\Project types\IT Projects\MultiRDP\MultiRDP\obj\Release\MultiRDP.Form1.resources
+E:\My Programming Projects\C#\Project types\IT Projects\MultiRDP\MultiRDP\obj\Release\MultiRDP.Properties.Resources.resources
+E:\My Programming Projects\C#\Project types\IT Projects\MultiRDP\MultiRDP\obj\Release\MultiRDP.csproj.GenerateResource.Cache
+G:\My Programming Projects\C#\Project types\IT Projects\MultiRDP\MultiRDP\bin\Release\MultiRDP.exe.config
+G:\My Programming Projects\C#\Project types\IT Projects\MultiRDP\MultiRDP\obj\Release\MultiRDP.exe
+G:\My Programming Projects\C#\Project types\IT Projects\MultiRDP\MultiRDP\obj\Release\MultiRDP.pdb
+G:\My Programming Projects\C#\Project types\IT Projects\MultiRDP\MultiRDP\obj\Release\MultiRDP.csprojResolveAssemblyReference.cache
+G:\My Programming Projects\C#\Project types\IT Projects\MultiRDP\MultiRDP\obj\Release\MultiRDP.Form1.resources
+G:\My Programming Projects\C#\Project types\IT Projects\MultiRDP\MultiRDP\obj\Release\MultiRDP.Properties.Resources.resources
+G:\My Programming Projects\C#\Project types\IT Projects\MultiRDP\MultiRDP\obj\Release\MultiRDP.csproj.GenerateResource.Cache
+G:\My Programming Projects\C#\Project types\IT Projects\MultiRDP\MultiRDP\bin\Release\MultiRDP.exe
+G:\My Programming Projects\C#\Project types\IT Projects\MultiRDP\MultiRDP\bin\Release\MultiRDP.pdb
+C:\Users\i703682\documents\visual studio 2012\Projects\MultiRDP\MultiRDP\obj\Release\MultiRDP.WMI_Tools.WMIQueryForm.resources
