@@ -32,6 +32,7 @@ namespace MultiRDP.WMI_Tools
             this.components = new System.ComponentModel.Container();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.mScavengedClassesTreeView = new System.Windows.Forms.TreeView();
             this.mScavengeButton = new System.Windows.Forms.Button();
             this.mScavengedNSResultTreeView = new System.Windows.Forms.TreeView();
             this.label2 = new System.Windows.Forms.Label();
@@ -42,7 +43,6 @@ namespace MultiRDP.WMI_Tools
             this.mRemoteHostHelpBox = new System.Windows.Forms.ToolTip(this.components);
             this.mScavengeLabel = new System.Windows.Forms.Label();
             this.mDisplayErrorsCheckBox = new System.Windows.Forms.CheckBox();
-            this.mNamespaceClassesTreeView = new System.Windows.Forms.TreeView();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.SuspendLayout();
@@ -59,7 +59,7 @@ namespace MultiRDP.WMI_Tools
             // 
             // tabPage1
             // 
-            this.tabPage1.Controls.Add(this.mNamespaceClassesTreeView);
+            this.tabPage1.Controls.Add(this.mScavengedClassesTreeView);
             this.tabPage1.Controls.Add(this.mScavengeButton);
             this.tabPage1.Controls.Add(this.mScavengedNSResultTreeView);
             this.tabPage1.Controls.Add(this.label2);
@@ -73,6 +73,14 @@ namespace MultiRDP.WMI_Tools
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Informational Query";
             this.tabPage1.UseVisualStyleBackColor = true;
+            // 
+            // mScavengedClassesTreeView
+            // 
+            this.mScavengedClassesTreeView.Location = new System.Drawing.Point(361, 19);
+            this.mScavengedClassesTreeView.Name = "mScavengedClassesTreeView";
+            this.mScavengedClassesTreeView.Size = new System.Drawing.Size(266, 342);
+            this.mScavengedClassesTreeView.TabIndex = 6;
+            this.mRemoteHostHelpBox.SetToolTip(this.mScavengedClassesTreeView, "All available classes from the namespace selected on the left will appear here");
             // 
             // mScavengeButton
             // 
@@ -164,14 +172,6 @@ namespace MultiRDP.WMI_Tools
             this.mDisplayErrorsCheckBox.UseVisualStyleBackColor = true;
             this.mDisplayErrorsCheckBox.CheckedChanged += new System.EventHandler(this.mDisplayErrorsCheckBox_CheckedChanged);
             // 
-            // mNamespaceClassesTreeView
-            // 
-            this.mNamespaceClassesTreeView.Location = new System.Drawing.Point(361, 19);
-            this.mNamespaceClassesTreeView.Name = "mNamespaceClassesTreeView";
-            this.mNamespaceClassesTreeView.Size = new System.Drawing.Size(181, 342);
-            this.mNamespaceClassesTreeView.TabIndex = 6;
-            this.mRemoteHostHelpBox.SetToolTip(this.mNamespaceClassesTreeView, "All available classes from the namespace selected on the left will appear here");
-            // 
             // WMIQueryForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -204,6 +204,6 @@ namespace MultiRDP.WMI_Tools
         private System.Windows.Forms.TreeView mScavengedNSResultTreeView;
         private System.Windows.Forms.Button mScavengeButton;
         private System.Windows.Forms.CheckBox mDisplayErrorsCheckBox;
-        private System.Windows.Forms.TreeView mNamespaceClassesTreeView;
+        private System.Windows.Forms.TreeView mScavengedClassesTreeView;
     }
 }

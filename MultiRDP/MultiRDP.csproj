@@ -63,6 +63,7 @@
     <Compile Include="WMI Tools\WMIQueryForm.Designer.cs">
       <DependentUpon>WMIQueryForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="WMI Tools\WmiResult.cs" />
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>

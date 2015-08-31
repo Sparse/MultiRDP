@@ -19,6 +19,7 @@ namespace MultiRDP.WMI_Tools
         string mPreviousHostScavenged;
         Form mResultsForm;
         TextBox resultsTextBox;
+        int lastScavengeCount;
         #endregion
 
         public WMIQueryForm()
@@ -31,14 +32,15 @@ namespace MultiRDP.WMI_Tools
             if (!CheckForValidState(false)) return;
             string[] computerNames = mComputerNameTextBox.Text.Split(new[] { Environment.NewLine }, StringSplitOptions.RemoveEmptyEntries);
 
-            if (WmiQueryTool == null)
+            if (WmiQueryTool == null || computerNames.Length != lastScavengeCount)
             {
+                lastScavengeCount = computerNames.Length;
                 mScavengedNSResultTreeView.Nodes.Clear();
                 for (int i = 0; i < computerNames.Length; i++)
                 {
                     mPreviousHostScavenged = computerNames[i];
                     WmiQueryTool = new WmiInformationGatherer(computerNames[i]);
-                    if (WmiQueryTool.RemoteHostError != null)
+                    if (WmiQueryTool.WmiResults.WmiError != null)
                     {
                         FireError(computerNames[i]);
                         mScavengedNSResultTreeView.Nodes.Add(computerNames[i]);
@@ -48,11 +50,11 @@ namespace MultiRDP.WMI_Tools
                     else
                     {
                         mScavengedNSResultTreeView.Nodes.Add(computerNames[i]);
-                        foreach (string Namespace in WmiQueryTool.AvailableWMINamespaces)
+                        foreach (string Namespace in WmiQueryTool.WmiResults.Namespaces)
                         {
                             mScavengedNSResultTreeView.Nodes[i].Nodes.Add(Namespace);
                         }
-                        ScavengeStatus(WmiQueryTool.ConnectedHost, true);
+                        ScavengeStatus(WmiQueryTool.WmiResults.ConnectedHost, true);
                         WmiQueryTool = null;
                     }
                 }
@@ -107,25 +109,25 @@ namespace MultiRDP.WMI_Tools
         private void FireError(string pHost)
         {
             string error = "Something went wrong";
-            switch (WmiQueryTool.RemoteHostError.HResult)
+            switch (WmiQueryTool.WmiResults.WmiError.HResult)
             {
                 case -2147023174:
-                    error = pHost + " " + WmiQueryTool.RemoteHostError.Message.ToString() + "\r\n\r\nThe remote host is likely offline or having issues. Check remote IP and try again";
+                    error = pHost + " " + WmiQueryTool.WmiResults.WmiError.Message.ToString() + "\r\n\r\nThe remote host is likely offline or having issues. Check remote IP and try again";
                     WmiQueryTool = null;
                     ScavengeStatus(pHost, false);
                     break;
                 case -2147023838:
-                    error = pHost + " " + WmiQueryTool.RemoteHostError.Message.ToString() + "\r\n\r\nThe Remote host appears to not be WMI capable. This can be caused by the WMI service being disabled, or the remote host not being a Windows system. Please validate remote host settings and try again";
+                    error = pHost + " " + WmiQueryTool.WmiResults.WmiError.Message.ToString() + "\r\n\r\nThe Remote host appears to not be WMI capable. This can be caused by the WMI service being disabled, or the remote host not being a Windows system. Please validate remote host settings and try again";
                     WmiQueryTool = null;
                     ScavengeStatus(pHost, false);
                     break;
                 case -2147024891:
-                    error = pHost + " " + WmiQueryTool.RemoteHostError.Message.ToString() + "\r\n\r\nYour currently logged on user does not appear to have rights on the remote system. Please check your rights and try again. Your user may need to be added to the RDP group first";
+                    error = pHost + " " + WmiQueryTool.WmiResults.WmiError.Message.ToString() + "\r\n\r\nYour currently logged on user does not appear to have rights on the remote system. Please check your rights and try again. Your user may need to be added to the RDP group first";
                     WmiQueryTool = null;
                     ScavengeStatus(pHost, false);
                     break;
                 default:
-                    error = pHost + " " + WmiQueryTool.RemoteHostError.Message.ToString() + "\r\n\r\nSomething went horribly wrong. There's an error code here. Report it to the developer, along with what you were doing so he can replicate the issue";
+                    error = pHost + " " + WmiQueryTool.WmiResults.WmiError.Message.ToString() + "\r\n\r\nSomething went horribly wrong. There's an error code here. Report it to the developer, along with what you were doing so he can replicate the issue";
                     break;
             }
 
@@ -181,7 +183,7 @@ namespace MultiRDP.WMI_Tools
         {
             WmiQueryTool = new WmiInformationGatherer("localhost");
             mNamespaceSelector.Items.Clear();
-            foreach (string Namespace in WmiQueryTool.AvailableWMINamespaces)
+            foreach (string Namespace in WmiQueryTool.WmiResults.Namespaces)
             {
                 mNamespaceSelector.Items.Add(Namespace);
             }
@@ -225,14 +227,21 @@ namespace MultiRDP.WMI_Tools
 
         private void mScavengedNSResultTreeView_NodeMouseClick(object sender, TreeNodeMouseClickEventArgs e)
         {
-            //if (e.Node.Parent == null)
-            //{
-            //    return;
-            //}
-            //else
-            //{
-            //    WmiQueryTool = new WmiInformationGatherer(
-            //}
+            if (e.Node.Parent == null)
+            {
+                return;
+            }
+            else
+            {
+                WmiQueryTool = new WmiInformationGatherer(e.Node.Text, e.Node.Parent.Text, true);
+                mScavengedClassesTreeView.Nodes.Clear();
+                mScavengedClassesTreeView.Nodes.Add(WmiQueryTool.WmiResults.ConnectedHost);
+                for (int i = 0; i < WmiQueryTool.WmiResults.Classes.Count; i++)
+                {
+                    mScavengedClassesTreeView.Nodes[0].Nodes.Add(WmiQueryTool.WmiResults.Classes[i]);
+                }
+                mScavengedClassesTreeView.Nodes[0].Expand();
+            }
         }
        
 
