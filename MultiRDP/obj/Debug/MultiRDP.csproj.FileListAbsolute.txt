@@ -1,9 +1,0 @@
-c:\users\i703682\documents\visual studio 2012\Projects\MultiRDP\MultiRDP\bin\Debug\MultiRDP.exe.config
-c:\users\i703682\documents\visual studio 2012\Projects\MultiRDP\MultiRDP\bin\Debug\MultiRDP.exe
-c:\users\i703682\documents\visual studio 2012\Projects\MultiRDP\MultiRDP\bin\Debug\MultiRDP.pdb
-c:\users\i703682\documents\visual studio 2012\Projects\MultiRDP\MultiRDP\obj\Debug\MultiRDP.csprojResolveAssemblyReference.cache
-c:\users\i703682\documents\visual studio 2012\Projects\MultiRDP\MultiRDP\obj\Debug\MultiRDP.Form1.resources
-c:\users\i703682\documents\visual studio 2012\Projects\MultiRDP\MultiRDP\obj\Debug\MultiRDP.Properties.Resources.resources
-c:\users\i703682\documents\visual studio 2012\Projects\MultiRDP\MultiRDP\obj\Debug\MultiRDP.csproj.GenerateResource.Cache
-c:\users\i703682\documents\visual studio 2012\Projects\MultiRDP\MultiRDP\obj\Debug\MultiRDP.exe
-c:\users\i703682\documents\visual studio 2012\Projects\MultiRDP\MultiRDP\obj\Debug\MultiRDP.pdb
