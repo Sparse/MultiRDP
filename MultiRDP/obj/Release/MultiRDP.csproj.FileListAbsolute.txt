@@ -26,3 +26,4 @@ G:\My Programming Projects\C#\Project types\IT Projects\MultiRDP\MultiRDP\obj\Re
 G:\My Programming Projects\C#\Project types\IT Projects\MultiRDP\MultiRDP\bin\Release\MultiRDP.exe
 G:\My Programming Projects\C#\Project types\IT Projects\MultiRDP\MultiRDP\bin\Release\MultiRDP.pdb
 C:\Users\i703682\documents\visual studio 2012\Projects\MultiRDP\MultiRDP\obj\Release\MultiRDP.WMI_Tools.WMIQueryForm.resources
+G:\My Programming Projects\C#\Project types\IT Projects\MultiRDP\MultiRDP\obj\Release\MultiRDP.WMI_Tools.WMIQueryForm.resources

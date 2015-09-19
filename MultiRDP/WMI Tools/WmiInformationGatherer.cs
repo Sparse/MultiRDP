@@ -33,8 +33,7 @@ namespace MultiRDP.WMI_Tools
 
             try
             {
-                WmiResults = new WmiResult();
-                WmiResults.ConnectedHost = pRemoteHost;
+                WmiResults = new WmiResult(pRemoteHost);
                 mObjectQuery = new ObjectQuery("select * from __Namespace");
                 mObjectSearcher = new ManagementObjectSearcher(new ManagementScope(new ManagementPath(@"\\" + pRemoteHost + @"\root")), mObjectQuery);
                 ManagementObjectCollection gatheredNamespaces = mObjectSearcher.Get();
@@ -64,8 +63,7 @@ namespace MultiRDP.WMI_Tools
                     ManagementClass managementClass = new ManagementClass(mRemoteWmiPath);
                     EnumerationOptions scavengeOptions = new EnumerationOptions();
                     scavengeOptions.EnumerateDeep = false;
-                    WmiResults = new WmiResult();
-                    WmiResults.ConnectedHost = pHostName;
+                    WmiResults = new WmiResult(pHostName);
                     WmiResults.PopulateClassesList(managementClass.GetSubclasses());
                 }
                 catch (Exception e)

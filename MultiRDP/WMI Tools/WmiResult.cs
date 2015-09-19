@@ -9,17 +9,21 @@ namespace MultiRDP.WMI_Tools
 {
     class WmiResult
     {
-        public List<string> Namespaces;
-        public List<string> Classes;
-        public List<string> Methods;
-        public List<string> Properties;
-        public string ConnectedHost;
-        public ManagementObjectCollection CollectedNamespaces;
-        public ManagementObjectCollection CollectedClasses;
-        public ManagementObjectCollection CollectedMethods;
-        public ManagementObjectCollection CollectedProperties;
-        public Exception WmiError;
+        public List<string> Namespaces { get; private set; }
+        public List<string> Classes { get; private set; }
+        public List<string> Methods { get; private set; }
+        public List<string> Properties { get; private set; }
+        public string ConnectedHost { get; private set; }        
+        public ManagementObjectCollection CollectedNamespaces { get; private set; }
+        public ManagementObjectCollection CollectedClasses { get; private set; }
+        public ManagementObjectCollection CollectedMethods { get; private set; }
+        public ManagementObjectCollection CollectedProperties { get; private set; }
+        public Exception WmiError { get; set; }
 
+        public WmiResult(string pRemoteHost)
+        {
+
+        }
 
         public WmiResult PopulateNamespaceList(ManagementObjectCollection pGatheredNamespaces)
         {
